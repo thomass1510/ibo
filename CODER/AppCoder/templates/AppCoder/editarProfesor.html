@@ -1,0 +1,37 @@
+{% extends "AppCoder/padre.html" %}
+
+{% load static %}
+
+{% block titulo %}
+
+<h1>Profesores</h1>
+
+{% endblock %}
+
+{% block contenidoQueCambia %}
+
+<h1>EDITANDO PROFESOR: {{nombre_profesor}}</h1>
+<p style="font-size: 120%;">Ingresa los datos a modificar</p>
+<img style="height: 250px; margin-left: 15px;"src="https://i.pinimg.com/564x/a4/e6/c1/a4e6c17184a2f703132649b50eec9cc7.jpg" alt="">
+<p>Formulario:</p>
+{% if form.errors %}
+
+<p style="color: red;">Los datos son erroneos.REVISAR LOS DATOS PORFAVOR</p>
+
+{% endif %}
+
+<form action="{% url 'editarProfesor' nombre_profesor %}" method="POST"> {% csrf_token %}
+
+    <table>
+
+        {{formulario.as_table}}
+
+    </table>
+
+    <input type="submit" value="Enviar">
+
+
+</form>
+
+<p>*En profesion indicar cual es su titulo*</p>
+{% endblock %}

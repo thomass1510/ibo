@@ -1,0 +1,25 @@
+{% extends "AppCoder/padre.html" %}
+
+{% load static %}
+
+{% block titulo %}
+
+<h1>Registrate</h1>
+
+{% endblock %}
+
+{% block contenidoQueCambia %}
+
+<h1>{{ mensaje }}</h1>
+<img src="https://i.gifer.com/749.gif">
+<form action="{% url 'register' %}" method="POST"> {% csrf_token %}
+
+    {{ form.as_p }}
+
+    <button type="submit">Registrate </button>
+
+
+</form>
+<h3>Ya tenes un usuario?<a href="{% url 'login' %}">Logueate aqui</a></h3>
+
+{% endblock %}

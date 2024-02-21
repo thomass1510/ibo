@@ -1,0 +1,24 @@
+{% extends "AppCoder/padre.html" %}
+
+{% load static %}
+
+{% block titulo %}
+
+<h1>Avatar</h1>
+
+{% endblock %}
+
+{% block contenidoQueCambia %}
+
+<h1>Agregar AVATAR</h1>
+<img src="https://i.gifer.com/749.gif">
+<form method="POST" enctype="multipart/form-data"> {% csrf_token %}
+
+    {{ formulario.as_p }}
+
+    <input type="submit" value="Actualizar"> 
+
+
+</form>
+
+{% endblock %}

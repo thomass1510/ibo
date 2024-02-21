@@ -1,0 +1,33 @@
+{% extends "AppCoder/padre.html" %}
+
+{% load static %}
+
+{% block titulo %}
+
+<h1>Listado</h1>
+
+{% endblock %}
+
+{% block contenidoQueCambia %}
+
+<h1>Estudiantes</h1>
+
+<img src="http://pm1.narvii.com/6462/5830e42c701eda06e3e7a71f7404ffe53bbc2c11_00.jpg">
+<ul>
+    {% for estudiante in object_list %}
+
+        <li>
+            <p>Nombre: {{estudiante.nombre}}</p>
+            <p>
+                <a href="{% url 'Detail' estudiante.id %}">Ver</a>
+                <a href="{% url 'Edit' estudiante.id %}">Editar</a>
+                <a href="{% url 'Delete' estudiante.id %}">Borrar</a>
+        </p>
+
+        </li>
+        
+    {% endfor %}
+    
+</ul>
+<h2><a href="{% url 'New' %}">Agregar un estudiante</a></h2>
+{% endblock %}

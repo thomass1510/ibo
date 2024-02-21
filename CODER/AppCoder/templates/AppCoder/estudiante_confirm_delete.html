@@ -1,0 +1,23 @@
+{% extends "AppCoder/padre.html" %}
+
+{% load static %}
+
+{% block titulo %}
+
+<h1>ESTUDIANTES</h1>
+
+{% endblock %}
+
+{% block contenidoQueCambia %}
+
+<form method="post">{% csrf_token %}
+    ¿Estas seguro que deseas borrar al estudiante "{{object}}"?
+    <input type="submit" value="SI" />
+    <p>
+        <a href="{% url 'List' %}">NO, regresar al listado</a>
+    </p>
+
+
+</form>
+
+{% endblock %}

@@ -1,0 +1,19 @@
+{% extends "AppCoder/padre.html" %}
+
+{% load static %}
+
+{% block titulo %}
+
+<h1>Listado</h1>
+
+{% endblock %}
+
+{% block contenidoQueCambia %}
+
+<h1>Estudiantes</h1>
+
+<img src="http://pm1.narvii.com/6462/5830e42c701eda06e3e7a71f7404ffe53bbc2c11_00.jpg">
+
+<h3>Para poder visualizar, editar,eliminar estudiantes hace <a href="{% url 'List' %}">click aqui!</a></h3>
+
+{% endblock %}

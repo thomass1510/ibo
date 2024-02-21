@@ -1,0 +1,22 @@
+{% extends "AppCoder/padre.html" %}
+
+{% load static %}
+
+{% block titulo %}
+
+<h1>ESTUDIANTES</h1>
+
+{% endblock %}
+
+{% block contenidoQueCambia %}
+
+<img src="https://nacionanime.com/wp-content/uploads/2021/10/1634567853_348_Los-5-personajes-mas-interesantes-de-Daisuke-Ohno-Japan-Poll.jpg.webp">
+
+<p>Nombre del estudiante: <i>{{estudiante.nombre}}</i></p>
+<p>Apellido del estudiante: <i>{{estudiante.apellido}}</i></p>
+<p>Email del estudiante: <i>{{estudiante.email}}</i></p>
+<p>
+    <a href="{% url 'List' %}">Regresar</a>
+</p>
+
+{% endblock %}

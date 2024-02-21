@@ -1,0 +1,31 @@
+{% extends "AppCoder/padre.html" %}
+
+{% load static %}
+
+
+{% block titulo %}
+
+<h1>BUSQUEDA</h1>
+
+{% endblock %}
+
+{% block contenidoQueCambia %}
+    <h1>Resultados de la busqueda:</h1>
+
+    {% if cursos %}
+    <ul style="color: rgb(18, 18, 119)">
+        {% for curso in cursos %}
+    
+            <li>{{ curso.nombre }}</li>
+            <li>{{ curso.camada }}</li>
+            <p style="color: black">El profesor se asignara proximamente</p>
+    
+        
+        {% endfor %}
+    </ul>
+    
+    {% else %}
+        <p>No hay ningun curso con ese numero de camada</p>
+    {% endif %}
+
+{% endblock %}

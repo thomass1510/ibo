@@ -1,0 +1,42 @@
+
+{% extends "AppCoder/padre.html" %}
+
+{% load static %}
+
+
+{% block titulo %}
+
+<h1>BUSQUEDA</h1>
+
+{% endblock %}
+
+{% block contenidoQueCambia %}
+
+    <h1>Formulario de busqueda camada:</h1>
+    <img src="http://www.deculture.es/wp-content/uploads/2012/11/circle-01.jpg" alt="">
+    {% if form.errors %}
+
+    <p style="color: red;">Los datos son erroneos.REVISAR LOS DATOS PORFAVOR</p>
+
+    {% endif %}
+
+    {% if error %}
+
+    <p style="color: red;">{{error}}</p>
+
+    {% endif %}
+
+
+    <p>Indique la camada que desea buscar:</p>
+    <form action="/AppCoder/buscar/" method="GET">
+
+        <input type="number" name="camada" id="camada">
+
+        <input type="submit" value="Buscar">
+
+
+    </form>
+
+    <br>
+    
+{% endblock %}
